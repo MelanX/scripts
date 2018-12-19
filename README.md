@@ -8,7 +8,7 @@ A small game which let you guess which number the program generated. If you're w
 2. Follow the instructions
 
 ## Sendmail
-A little script like my other sendmail script. One difference: You can go step-by-step through each point.
+A little script like my other [sendmail](https://github.com/MelanX/sendmail/) script. One difference: You can go step-by-step through each point.
 ### How to use
 0. Edit `sendmail.py` in the `Default settings` area (optional)
 1. Start `sendmail.py`
