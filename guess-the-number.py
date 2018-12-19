@@ -88,6 +88,6 @@ else:
     else:
         print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} rounds. You failed {total_fail / lap} on average.')
 print(f'Your best try was number {best_lap} with only {best_fail} fails!')
-print(f'Please give me feedback on discord: \'MelanX#7949\'')
+# print(f'Please give me feedback on discord: \'MelanX#7949\'')
 time.sleep(1)
 input(f'\nPress enter to end this program...')
