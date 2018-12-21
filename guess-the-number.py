@@ -86,14 +86,14 @@ while True:
 
 if lap == 1:
     if total_fail == 1:
-        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} round. You failed {total_fail / lap} on average.')
+        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} round. You failed {total_fail / lap} times on average.')
     else:
-        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} round. You failed {total_fail / lap} on average.')
+        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} round. You failed {total_fail / lap} times on average.')
 else:
     if total_fail == 1:
-        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} rounds. You failed {total_fail / lap} on average.')
+        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} rounds. You failed {total_fail / lap} times on average.')
     else:
-        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} rounds. You failed {total_fail / lap} on average.')
+        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} rounds. You failed {total_fail / lap} times on average.')
 print(f'Your best try was number {best_lap} with only {best_fail} fails!')
 # print(f'Please give me feedback on discord: \'MelanX#7949\'')
 time.sleep(1)
