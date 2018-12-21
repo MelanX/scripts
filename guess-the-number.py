@@ -16,22 +16,28 @@ print("""   _____                       _   _            _   _                 _
 
 time.sleep(1)
 k = 0
-difficulty = input('Difficulty:\neasy   (0 - 100) \nnormal (0 - 1000)\nhard   (0 - 10000)\ncustom (0 - whatever you want)\nPlease type in which difficulty you choose: ')
-if difficulty == 'easy':
-    k = 100
-elif difficulty == 'normal':
-    k = 1000
-elif difficulty == 'hard':
-    k = 10000
-elif difficulty == 'custom':
-    while ( k <= 9 or k >= 2000000000 ):
-        k = int(input('What should be the highest number? '))
-        if k <= 9:
-            print(f'{k} is too low. Please choose a higher number!')
-        if k >= 2000000000:
-            print(f'{k} is too high. Please choose a lower number!')
-elif difficulty != 'easy' and 'normal' and 'hard' and 'custom':
-    print('\n\nPlease type in \'easy\', \'normal\', \'hard\' or \'custom\'')
+print('Difficulty:\neasy   (0 - 100) \nnormal (0 - 1000)\nhard   (0 - 10000)\ncustom (0 - whatever you want)')
+while True:
+    difficulty = input('Please type in which difficulty you choose: ')
+    if difficulty == 'easy':
+        k = 100
+        break
+    elif difficulty == 'normal':
+        k = 1000
+        break
+    elif difficulty == 'hard':
+        k = 10000
+        break
+    elif difficulty == 'custom':
+        while ( k <= 9 or k >= 2000000000 ):
+            k = int(input('What should be the highest number? '))
+            if k <= 9:
+                print(f'{k} is too low. Please choose a higher number!')
+            if k >= 2000000000:
+                print(f'{k} is too high. Please choose a lower number!')
+        break
+    elif difficulty != 'easy' and 'normal' and 'hard' and 'custom':
+        print('\n\nPlease type in \'easy\', \'normal\', \'hard\' or \'custom\'')
 
 while True:
     chance = 0
@@ -46,6 +52,7 @@ while True:
             if chance == 3:
                 print("Okay, you don't want to play normal. Game Over!")
                 time.sleep(5)
+                exit()
         if guess > i:
             print(f'{guess} is too high. Try a lower number! ')
             fail += 1
