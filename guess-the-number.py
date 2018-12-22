@@ -45,7 +45,12 @@ while True:
     guess = k + 1
     fail = 0
     while guess != i:
-        guess = int(input('\nGuess the number: '))
+        while True:
+            guess = input('\nGuess the number: ')
+            if guess != type(int):
+                print (f'{guess} is no number. Please type in a number from 0-{k}.')
+            else:
+                break
         if guess > k:
             print('This is higher than the highest number!')
             chance = chance + 1
@@ -65,13 +70,13 @@ while True:
         print(f'You\'re the best player EU west! You just failed {fail} time.')
     if ( 1 < fail < 5 ):
         print(f'You\'re the best player EU west! You just failed {fail} times.')
-    if ( 4 < fail < 10 ):
+    if ( 4 < fail < 20 ):
         print(f'That was really nice! You failed only {fail} times.')
-    if ( 9 < fail < 20 ):
-        print(f'Oh boy/girl, you failed {fail} times. Next time you have more luck, haven\'t you?')
     if ( 19 < fail < 50 ):
+        print(f'Oh boy/girl, you failed {fail} times. Next time you have more luck, haven\'t you?')
+    if ( 49 < fail < 100 ):
         print(f'{fail} times failed. Please make it a bit better.')
-    if fail > 49:
+    if fail > 99:
         print(f'You need more luck. You failed {fail} times!')
     lap += 1
     total_fail += fail
