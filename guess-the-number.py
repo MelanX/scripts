@@ -87,12 +87,14 @@ while True:
     while True:
         again = input('Do you wanna play again (y/n)? ')
         if again == 'y':
-            print(f'\nYour difficulty is still {difficulty}.')
+            print(f'\nYour difficulty is still {difficulty} with the highest number {k}.')
+            break
         elif again == 'n':
             break
         elif again != 'y' and again != 'n':
             print('Please answer with \'y\' or \'n\'.')
-    break
+    if again == 'n':
+        break
 
 if lap == 1:
     if total_fail == 1:
