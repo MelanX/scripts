@@ -47,9 +47,10 @@ while True:
     while guess != i:
         while True:
             guess = input('\nGuess the number: ')
-            if guess != type(int):
-                print (f'{guess} is no number. Please type in a number from 0-{k}.')
+            if not guess.isdigit():
+                print (f'\'{guess}\' is no number. Please type in a number from 0-{k}.')
             else:
+                guess = int(guess)
                 break
         if guess > k:
             print('This is higher than the highest number!')
@@ -83,11 +84,15 @@ while True:
     if fail < best_fail:
         best_fail = fail
         best_lap = lap
-    again = input('Do you wanna play again (y/n)? ')
-    if again == 'y':
-        print(f'\nYour difficulty is still {difficulty}.')
-    elif again != 'y':
-        break
+    while True:
+        again = input('Do you wanna play again (y/n)? ')
+        if again == 'y':
+            print(f'\nYour difficulty is still {difficulty}.')
+        elif again == 'n':
+            break
+        elif again != 'y' and again != 'n':
+            print('Please answer with \'y\' or \'n\'.')
+    break
 
 if lap == 1:
     if total_fail == 1:
