@@ -1,10 +1,10 @@
 # scripts
 A collection from all of my scripts
 
-## Guess the Number
+## Guess the Number (CPU)
 A small game which let you guess which number the program generated. If you're wrong the program says higher/lower.
 ### How to use
-1. Start `guess-the-number.py`
+1. Start `guess-the-number.py` (or `guess-the-number-CPU.py` for CPU guessing)
 2. Follow the instructions
 
 ## Sendmail
