@@ -116,3 +116,4 @@ dmypy.json
 # self-added remove stuff
 /.idea
 *.iml
+test.*

@@ -5,6 +5,8 @@ lap = 0
 total_fail = 0
 best_fail = int(2000000000)
 best_lap = int(2000000000)
+worst_fail = int(0)
+worst_lap = int(0)
 
 print("""   _____                       _   _            _   _                 _               
   / ____|                     | | | |          | \ | |               | |              
@@ -18,7 +20,7 @@ time.sleep(1)
 k = 0
 print('Difficulty:\neasy   (0 - 100) \nnormal (0 - 1000)\nhard   (0 - 10000)\ncustom (0 - whatever you want)')
 while True:
-    difficulty = input('Please type in which difficulty you choose: ')
+    difficulty = input('Please type in which difficulty you choose: ').strip()
     if difficulty == 'easy':
         k = 100
         break
@@ -30,7 +32,11 @@ while True:
         break
     elif difficulty == 'custom':
         while ( k <= 9 or k >= 2000000000 ):
-            k = int(input('What should be the highest number? '))
+            k = input('What should be the highest number? ').strip()
+            if not k.isdigit():
+                print('Please type in a real number.')
+            else:
+                k = int(k)
             if k <= 9:
                 print(f'{k} is too low. Please choose a higher number!')
             if k >= 2000000000:
@@ -67,23 +73,26 @@ while True:
             fail += 1
     if fail == 0:
         print(f'That was too easy for you. Or you\'re just the best player in the whole world!')
-    if fail == 1:
+    elif fail == 1:
         print(f'You\'re the best player EU west! You just failed {fail} time.')
-    if ( 1 < fail < 5 ):
+    elif ( fail < 5 ):
         print(f'You\'re the best player EU west! You just failed {fail} times.')
-    if ( 4 < fail < 20 ):
+    elif ( fail < 20 ):
         print(f'That was really nice! You failed only {fail} times.')
-    if ( 19 < fail < 50 ):
+    elif ( fail < 50 ):
         print(f'Oh boy/girl, you failed {fail} times. Next time you have more luck, haven\'t you?')
-    if ( 49 < fail < 100 ):
+    elif ( fail < 100 ):
         print(f'{fail} times failed. Please make it a bit better.')
-    if fail > 99:
+    else:
         print(f'You need more luck. You failed {fail} times!')
     lap += 1
     total_fail += fail
     if fail < best_fail:
         best_fail = fail
         best_lap = lap
+    if fail > worst_fail:
+        worst_fail = fail
+        worst_lap = lap
     while True:
         again = input('Do you wanna play again (y/n)? ')
         if again == 'y':
@@ -96,17 +105,28 @@ while True:
     if again == 'n':
         break
 
+if difficulty == "custom":
+    cstm = f' ({k})'
+else:
+    cstm = ''
 if lap == 1:
     if total_fail == 1:
-        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} round. You failed {total_fail / lap} times on average.')
+        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty}{cstm} round. You failed {total_fail / lap} times on average.')
     else:
-        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} round. You failed {total_fail / lap} times on average.')
+        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty}{cstm} round. You failed {total_fail / lap} times on average.')
 else:
     if total_fail == 1:
-        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty} rounds. You failed {total_fail / lap} times on average.')
+        print(f'\nYou totally failed {total_fail} time in {lap} {difficulty}{cstm} rounds. You failed {total_fail / lap} times on average.')
     else:
-        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty} rounds. You failed {total_fail / lap} times on average.')
-print(f'Your best try was number {best_lap} with only {best_fail} fails!')
+        print(f'\nYou totally failed {total_fail} times in {lap} {difficulty}{cstm} rounds. You failed {total_fail / lap} times on average.')
+if best_fail == 1:
+    print(f'Your best try was number {best_lap} with only {best_fail} fail!')
+else:
+    print(f'Your best try was number {best_lap} with only {best_fail} fails!')
+if worst_fail == 1:
+    print(f'Your worst try was number {worst_lap} with {worst_fail} fail!')
+else:
+    print(f'Your worst try was number {worst_lap} with {worst_fail} fails!')
 # print(f'Please give me feedback on discord: \'MelanX#7949\'')
 time.sleep(1)
 input(f'\nPress enter to end this program...')
