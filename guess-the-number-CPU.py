@@ -21,7 +21,7 @@ time.sleep(1)
 k = 0
 print('Difficulty:\neasy   (0 - 100) \nnormal (0 - 1000)\nhard   (0 - 10000)\ncustom (0 - whatever you want)')
 while True:
-	difficulty = input('Please type in which difficulty you choose: ').strip()
+	difficulty = input('Please type in which difficulty you choose: ').replace(' ', '')
 	if difficulty == 'easy':
 		k = 100
 		break
@@ -117,22 +117,22 @@ else:
 	cstm = ''
 if lap == 1:
 	if total_fail == 1:
-		print(f'\nYou totally failed {total_fail} time in {lap} {difficulty}{cstm} round. You failed {total_fail / lap} times on average.')
+		print(f'\nThe computer totally failed {total_fail} time in {lap} {difficulty}{cstm} round. The computer failed {total_fail / lap} times on average.')
 	else:
-		print(f'\nYou totally failed {total_fail} times in {lap} {difficulty}{cstm} round. You failed {total_fail / lap} times on average.')
+		print(f'\nThe computer totally failed {total_fail} times in {lap} {difficulty}{cstm} round. The computer failed {total_fail / lap} times on average.')
 else:
 	if total_fail == 1:
-		print(f'\nYou totally failed {total_fail} time in {lap} {difficulty}{cstm} rounds. You failed {total_fail / lap} times on average.')
+		print(f'\nThe computer totally failed {total_fail} time in {lap} {difficulty}{cstm} rounds. The computer failed {total_fail / lap} times on average.')
 	else:
-		print(f'\nYou totally failed {total_fail} times in {lap} {difficulty}{cstm} rounds. You failed {total_fail / lap} times on average.')
+		print(f'\nThe computer totally failed {total_fail} times in {lap} {difficulty}{cstm} rounds. The computer failed {total_fail / lap} times on average.')
 if best_fail == 1:
-	print(f'Your best try was number {best_lap} with only {best_fail} fail!')
+	print(f'The computers best try was number {best_lap} with only {best_fail} fail!')
 else:
-	print(f'Your best try was number {best_lap} with only {best_fail} fails!')
+	print(f'The computers best try was number {best_lap} with only {best_fail} fails!')
 if worst_fail == 1:
-	print(f'Your worst try was number {worst_lap} with {worst_fail} fail!')
+	print(f'The computers worst try was number {worst_lap} with {worst_fail} fail!')
 else:
-	print(f'Your worst try was number {worst_lap} with {worst_fail} fails!')
+	print(f'The computers worst try was number {worst_lap} with {worst_fail} fails!')
 # print(f'Please give me feedback on discord: \'MelanX#7949\'')
 time.sleep(1)
 input(f'\nPress enter to end this program...')
