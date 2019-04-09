@@ -97,12 +97,13 @@ while done != rounds:
 			if range_min < guess:
 				range_min = guess
 				range_min += 1
-		elif guess == i and delay:
-			print(f'The number was {i}.\n')
+		# elif guess == i and delay:
+		# 	print(f'{lap}. The number was {i}.\n')
 		first = False
 		if delay:
 			time.sleep(0.5)
 	lap += 1
+	print(f'{lap}. The number was {i}.')
 	total_fail += fail
 	if fail < best_fail:
 		best_fail = fail
