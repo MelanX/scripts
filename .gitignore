@@ -117,3 +117,5 @@ dmypy.json
 /.idea
 *.iml
 test.*
+data/
+diagrams/

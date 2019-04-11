@@ -8,7 +8,6 @@ import urllib.parse
 import urllib.request
 import zipfile
 
-import pandas as pd
 import telegram_send
 from matplotlib import pyplot as plt
 
@@ -162,7 +161,7 @@ def save_diagram():
     while ids < len(regionpart_names):
         region_id = regionpart_names[ids]
 
-        sample_data = pd.read_csv(f"data/{region_id.replace('/', '_')}.csv")
+        sample_data = csv.read_csv(f"data/{region_id.replace('/', '_')}.csv")
 
         plt.plot(sample_data.Datum, sample_data.Erle, "-o")
         plt.plot(sample_data.Datum, sample_data.Beifuss, "-o")
